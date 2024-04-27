@@ -1,0 +1,66 @@
+---
+title: "MODULO 3"
+authors:
+  - name: Santiago Diez
+  - name: Juan Rivero
+  - name: Agustín Rodriguez
+  - name: Tomás Boismene
+  - name: Lucas Patiri
+  - name: Tomás Cerutti
+abstract: "Este documento explica de forma resumida el documento de r."
+bibliography: references.bib
+biblio-style: apa
+header-includes:
+  - \usepackage{float}
+output: rticles::arxiv_article
+---
+
+
+\Large Tutorial básico de R
+
+#  Introducción a R
+   - Analizamos datos con el fin de modelar un comportamiento y extraer conclusiones
+   - Estas herramientas permiten graficar y realizar ajustes.
+   - Veremos el lenguaje R para el análisis de datos
+
+#  Estructuras de Datos en R
+   - Incluye datos de tipo vector, matrices, data frames (tabla bidimensional donde el tipo de datos almacenado en una columna puede diferir del que está en otra - Los datos almacenados en una misma columna deben ser del mismo tipo, pueden ser caracteres, numéricos o lógico true or false) y listas.
+   - Utiliza funciones diversas, aquellas que se añaden de paquete se hacen por acción de attach
+   - R usa el símbolo <- para asignar en vez del =
+   - Se comenta con # precedido
+   - La función c() convierte sus argumentos en un vector o una lista
+   - Usamos la función plot(objeto) para graficar funciones
+   - Accedemos a documentaciones con help(nombre de función)
+
+#  Espacio de Trabajo y Manejo de Archivos
+   - Espacio de trabajo: espacio de memoria en el cual se guardan los objetos, se puede guardar el trabajo al finalizar la sesión
+   - Usamos la función rm() para eliminar objetos
+   - El directorio de trabajo es donde R salva por defecto los resultados y de donde intenta leer los ficheros, para saber cuál es el directorio usamos la función getwd()
+   - La función setwd("directorio") permite modificar el directorio de trabajo
+   - Para salvar el espacio de trabajo en un fichero: save.image
+   - Para guardar algunos objetos: save()
+   - La función load() carga en el espacio de trabajo actual el fichero almacenado
+   - Las funciones savehistory() y loadhistory() permiten salvar a fichero los comandos de la sesión
+   - La función source() permite cargar y ejecutar el fichero
+
+#  Data Frames
+   - Para introducir o modificar datos del data frame uso edit(), donde primero debo crear el objeto vacío, especificando el nombre y el tipo de las variables
+   - Read.table() lo usamos para importar a un data frame información de un fichero de texto
+   - Si a esta función le colocamos entre paréntesis header=TRUE le estamos indicando que la primera fila son los nombres de las variables
+   - Para acceder a la variable de un data frame escribo el nombre del data frame seguido del símbolo $ y el nombre de la variable
+   - Para dibujar gráficos también se emplea la función pretty()
+
+#  Gráficos
+   - Además del plot() otras funciones útiles son hist() y boxplot() que dibujan el histograma y los datos pasados como argumento, además hay una función dev.new() que abre una nueva ventana gráfica sobre la cual es posible construir un nuevo gráfico
+   - La función par() permite asignar valor a los parámetros del gráfico
+
+#  Manejo Básico de Datos
+   - Modelado y simulación de eventos discretos. Cubren varios temas clave relacionados con el manejo de datos, la manipulación de estructuras de datos, el control de flujo y la definición de funciones en R.
+   - Manejo básico de datos: Asignación de variables, creación de data frames, selección y transformación de datos utilizando expresiones lógicas.
+   - Valor NA (No Disponible): Manejo del valor NA en vectores y data frames, funciones como is.na() y na.omit(). Is.na() acepta un objeto como argumento y devuelve un objeto del mismo tamaño con las entradas reemplazadas por TRUE si el elemento es NA y por FALSE si no lo es. Si alguno de los operandos es NA el resultado de la operación aritmética es también NA. La función na.omit() devuelve un objeto en el cual se han eliminado todos los valores NA
+   - Conversión de tipos de datos: Funciones para identificar y convertir tipos de datos como is.numeric(), as.vector(), etc. Usamos is.tipodato() y devuelve TRUE OR FALSE dependiendo de que el objeto pasado como argumento sea o no el tipo de dato
+   - Control de flujo: Sentencias for, while, if-else para controlar la ejecución del código.
+   - Definición de funciones: Sintaxis para definir funciones personalizadas, uso de argumentos y cuerpo de la función.
+   - Funciones matemáticas: Descripción de funciones matemáticas comunes como abs(), ceiling(), round(), etc.
+   
+  Además, se proporcionan ejemplos de código en R para ilustrar el uso de estas características y funciones.
