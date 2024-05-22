@@ -1,0 +1,72 @@
+---
+title: "El método del gas neural"
+author: "LA CASTA"
+date: "22/05/24"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+# Introducción
+
+El método del "neural gas" es una red neuronal artificial inspirada en el mapa auto-organizativo (SOM)
+
+El nombre "neural gas" proviene de la forma en que los vectores de características se distribuyen dinámicamente, de manera similar a las moléculas de un gas, en el espacio de datos. Este método es particularmente útil en problemas de compresión de datos y cuantificación de vectores, como en el reconocimiento de voz, procesamiento de imágenes y reconocimiento de patrones. También es una alternativa robusta al algoritmo de agrupamiento k-means y se utiliza para el análisis de clústeres.
+
+
+---
+
+# ¿Qué es el gas neural?
+
+- El gas neural es una red neuronal autoorganizada.
+- Se utiliza para la clasificación de datos no supervisada.
+- Imita el comportamiento del sistema nervioso.
+
+![Descripción de la imagen](redneuronal.png)
+<img src="redneuronal.png" width="20px" />
+---
+
+# Historia
+
+- Fue introducida en 1991 por Thomas Martinetz y Klaus Schulten. Este método se utiliza para encontrar representaciones óptimas de datos basadas en vectores de características, distribuyéndose de manera similar a un gas dentro del espacio de datos durante el proceso de adaptación.
+- Basado en el modelo de redes neuronales de Kohonen.
+
+---
+
+# Aplicaciones
+
+1. Clasificación de imágenes.
+2. Reconocimiento de patrones.
+3. Análisis de datos complejos.
+
+---
+
+#Ventajas y desventajas
+#Ventajas
+Alta eficiencia en la clasificación de datos complejos.
+Adaptabilidad a diferentes tipos de datos.
+
+#Desventajas
+Requiere una cantidad considerable de datos para entrenar.
+Puede ser computacionalmente intensivo
+
+---
+#Ejemplo
+```{r}
+known_tree <- cbind(c(0,2,3),
+c(0,2,1),
+c(0,-2,-3),
+c(0,-2,-1)
+)
+# now add some noise to the known tree...
+realizations <- matrix(rep(known_tree,5), ncol=20) + matrix(rnorm(60,0,1),ncol=20)
+matplot(realizations, lty=2, col = "grey", type="l",
+ylab = "Disturbance", xaxt = "n", main = "Initial realizations")
+axis(1, at=1:3, labels=1:3)
+```
+
+
